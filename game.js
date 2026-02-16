@@ -58,7 +58,7 @@ function startGame (){
 }
 function removeZeros(row){
     zeroRemovedRow = row.filter((value) => value > 0)
-    console.log(zeroRemovedRow)
+    return zeroRemovedRow
 }
 function combinarIguales(row){
 let result = []
