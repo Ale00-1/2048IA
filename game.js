@@ -76,3 +76,9 @@ for (let i = 0; i < row.length; i++){
   }
   return result
 }
+function fillZeros (row){
+  while (row.length < 4){
+    row.push(0)
+  }
+  return row
+}
