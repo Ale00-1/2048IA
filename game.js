@@ -82,3 +82,9 @@ function fillZeros (row){
   }
   return row
 }
+function moveLeft (row){
+  let noZeros = removeZeros(row)
+  let combined = combine(noZeros)
+  let filled = fillZeros(combined)
+  return filled
+}
