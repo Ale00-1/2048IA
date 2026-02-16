@@ -1,0 +1,47 @@
+var board = [[0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,2]
+           ]
+var score = 0
+var gameOver = false
+
+function showBoard(board){
+    var toShowBoard = []
+    for (row of board){
+        toShowBoard.push(row)
+        toShowBoard.push('\n')
+    }
+    return toShowBoard
+}
+function getZeros(board,val){ // return pos as [i][j] of matching value on board
+    var zerosPos = [] 
+    var j = 0
+    for (row of board){
+        row.forEach((item,i) => {
+        var pos = []
+        if (item == val){
+            pos.push([i])
+            pos.push([j])
+            zerosPos.push([pos])
+        }})
+      j++
+    }
+    return zerosPos
+    }  
+function addValue(board){
+    console.log(board)
+    let zeros = getZeros(board,0)
+    console.log(zeros)
+    if (zeros.length == 0){
+      return
+    }
+    var randomTile = Math.floor(Math.random() * zeros.length)
+    var randomTilePos = zeros[randomTile]
+    console.log(randomTilePos)
+    var randomNumber = Math.random() < 0.9 ? 2 : 4
+    console.log(randomTilePos[0][1])
+    console.log(board[randomTilePos[0][1]])
+    board[randomTilePos[0][1]].splice(randomTilePos[0][0],1,randomNumber)
+  return board
+}
