@@ -45,3 +45,14 @@ function addValue(board){
     board[randomTilePos[0][1]].splice(randomTilePos[0][0],1,randomNumber)
   return board
 }
+function startGame (){
+  var board = [[0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0]
+           ]
+  addValue(board)
+  addValue(board)
+  console.log(board)
+  
+}
