@@ -60,3 +60,19 @@ function removeZeros(row){
     zeroRemovedRow = row.filter((value) => value > 0)
     console.log(zeroRemovedRow)
 }
+function combinarIguales(row){
+let result = []
+for (let i = 0; i < row.length; i++){
+  if (row[i] === row[i+1]){
+    result.push(row[i] * 2)
+    console.log(row[i])
+    i++
+    }
+  else{
+    result.push(row[i])
+    }
+  console.log(result)
+  
+  }
+  return result
+}
