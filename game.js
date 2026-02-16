@@ -82,9 +82,15 @@ function fillZeros (row){
   }
   return row
 }
-function moveLeft (row){
+function moveRowLeft (row){
   let noZeros = removeZeros(row)
   let combined = combine(noZeros)
   let filled = fillZeros(combined)
   return filled
+}
+function moveLeft(board){
+  for (let i = 0;i < board.length; i++){
+    board[i] = moveRowLeft(board[i])
+  }
+  return board
 }
