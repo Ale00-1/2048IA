@@ -56,3 +56,7 @@ function startGame (){
   console.log(board)
   
 }
+function removeZeros(row){
+    zeroRemovedRow = row.filter((value) => value > 0)
+    console.log(zeroRemovedRow)
+}
