@@ -223,3 +223,26 @@ function renderBoard (board){
     }
   }
 }
+
+document.addEventListener('keyup', function(event){
+  switch(event.key){
+    case 'ArrowLeft':
+    case 'KeyA':
+      makeMove(board, moveLeft(board))
+      break;
+    case 'ArrowUp':
+    case 'KeyW':
+      makeMove(board, moveUp(board))
+      break;
+    case 'ArrowDown':
+    case 'KeyS':
+      makeMove(board, moveDown(board))
+      break;
+    case 'ArrowRight':
+    case 'KeyD':
+      makeMove(board, moveRight(board))
+      break;
+    default:
+      console.log('Invalid KeyPress, Use  Arrow Up/Left/Down/Right or Key W/A/S/D')
+  }
+})
