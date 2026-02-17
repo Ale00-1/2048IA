@@ -1,7 +1,7 @@
 var board = [[0,0,0,0],
             [0,0,0,0],
             [0,0,0,0],
-            [0,0,0,2]
+            [0,0,0,0]
            ]
 var score = 0
 var gameOver = false
@@ -93,4 +93,14 @@ function moveLeft(board){
     board[i] = moveRowLeft(board[i])
   }
   return board
+}
+function moveRight(board){
+  for (let i = 0;i < board.length; i++){
+    board[i].reverse()
+  }
+  moveLeft(board[i])
+  
+  for (let i = 0;i < board.length; i++){
+    board[i].reverse()
+  }
 }
