@@ -1,0 +1,19 @@
+#board{
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 8px;
+    background-color: #bbada0;
+    padding: 8px;
+    width: fit-content;
+}
+
+.tile{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: #cdc1b4;
+    font-size: 24px;
+    font-weight: bold;
+}
