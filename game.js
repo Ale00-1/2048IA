@@ -104,3 +104,14 @@ function moveRight(board){
     board[i].reverse()
   }
 }
+function columnToRow(board){
+  let newBoard = []
+  for(let col = 0;col < 4;col++){
+    let newRow = []
+    for(let row = 0;row < 4;row++){
+      newRow.push(board[row][col])
+    }
+    newBoard.push(newRow)
+  }
+  return newBoard
+}
