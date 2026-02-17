@@ -211,3 +211,15 @@ function makeMove (board, move){
   }
   return board
 }
+function renderBoard (board){
+  let htmlBoard = document.querySelector('#board')
+  htmlBoard.innerHTML = ""
+  for (let i = 0; i < board.length; i++){
+    for (let j = 0; j < 4; j++){
+      let tile = document.createElement('div')
+      tile.classList.add('tile')
+      tile.textContent = board[i][j]
+      htmlBoard.appendChild(tile)
+    }
+  }
+}
