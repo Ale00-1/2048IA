@@ -186,7 +186,8 @@ function makeMove (board, move){
     addValue(board)
     if (!hasValidMoves(board)){
       gameOver = true
-      console.log('Game Over')
+      document.querySelector('#gameOver').style.display = 'block'
+      document.querySelector('#finalScore').textContent = score
     }
   }
   else{
