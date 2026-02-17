@@ -128,3 +128,7 @@ function moveDown(board){
   board = columnToRow(board)
   return board
 }
+function cloneBoard(board){
+  newBoard = board.map((row) => [...row])
+  return newBoard
+}
