@@ -57,7 +57,7 @@ function startGame (){
   
 }
 function removeZeros(row){
-    zeroRemovedRow = row.filter((value) => value > 0)
+    let zeroRemovedRow = row.filter((value) => value > 0)
     return zeroRemovedRow
 }
 function combine(row){
@@ -129,13 +129,13 @@ function moveDown(board){
   return board
 }
 function cloneBoard(board){
-  newBoard = board.map((row) => [...row])
+  let newBoard = board.map((row) => [...row])
   return newBoard
 }
 function boardsAreEqual(board1,board2){
   let matches = 0
   for (let i = 0; i < 4; i++){
-    for (let j = 0;i < 4; j++){
+    for (let j = 0;j < 4; j++){
       if (board1[i][j] === board2[i][j]){
         matches++}
       else{
@@ -172,7 +172,7 @@ function hasValidMoves (board){
   return false
 }
 function makeMove (board, move){
-  oldBoard = cloneBoard(board)
+  let oldBoard = cloneBoard(board)
   switch(move.toLowerCase()){
     case 'w':
     case 'up':
