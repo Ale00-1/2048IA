@@ -147,3 +147,27 @@ function boardsAreEqual(board1,board2){
     return true
   }
 }
+function hasValidMoves (board){
+  for (let i = 0; i < 4 ;i++){
+    for (let j = 0;j < 4;j++){
+      if (board[i][j] == 0){
+        return true
+      }
+    }
+  }
+  for (let i = 0; i < 4; i++){
+    for (let j = 0; j < 3; j++){
+      if (board[i][j] == board[i][j+1]){
+        return true
+      }
+    }
+  }
+  for (let j = 0; j < 4; j++){
+    for (let i = 0; i < 3; i++){
+      if (board[i][j] == board[i+1][j]){
+        return true
+      }
+    }
+  }
+  return false
+}
