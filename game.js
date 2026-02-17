@@ -132,3 +132,18 @@ function cloneBoard(board){
   newBoard = board.map((row) => [...row])
   return newBoard
 }
+function boardsAreEqual(board1,board2){
+  let matches = 0
+  for (let i = 0; i < 4; i++){
+    for (let j = 0;i < 4; j++){
+      if (board1[i][j] === board2[i][j]){
+        matches++}
+      else{
+        return false
+      }
+    } 
+  }
+  if (matches == 16){
+    return true
+  }
+}
