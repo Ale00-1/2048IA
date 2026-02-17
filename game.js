@@ -223,26 +223,33 @@ function renderBoard (board){
     }
   }
 }
-
+let board = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+addValue(board)
+renderBoard(board);
 document.addEventListener('keyup', function(event){
   switch(event.key){
     case 'ArrowLeft':
-    case 'KeyA':
-      makeMove(board, moveLeft(board))
+    case 'a':
+    case 'A':
+      makeMove(board, 'left')
       break;
     case 'ArrowUp':
-    case 'KeyW':
-      makeMove(board, moveUp(board))
+    case 'w':
+    case 'W':
+      makeMove(board, 'up')
       break;
     case 'ArrowDown':
-    case 'KeyS':
-      makeMove(board, moveDown(board))
+    case 's':
+    case 'S':
+      makeMove(board, 'down')
       break;
     case 'ArrowRight':
-    case 'KeyD':
-      makeMove(board, moveRight(board))
+    case 'd':
+    case 'D':
+      makeMove(board, 'right')
       break;
     default:
       console.log('Invalid KeyPress, Use  Arrow Up/Left/Down/Right or Key W/A/S/D')
   }
+  renderBoard(board)
 })
