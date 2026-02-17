@@ -17,3 +17,11 @@
     font-size: 24px;
     font-weight: bold;
 }
+#gameOver {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+}
