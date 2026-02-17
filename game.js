@@ -115,3 +115,9 @@ function columnToRow(board){
   }
   return newBoard
 }
+function moveUp(board){
+  board = columnToRow(board)
+  moveLeft(board)
+  board = columnToRow(board)
+  return board
+}
