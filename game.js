@@ -171,3 +171,38 @@ function hasValidMoves (board){
   }
   return false
 }
+function makeMove (board, move){
+  oldBoard = cloneBoard(board)
+  switch(move.toLowerCase()){
+    case 'w':
+    case 'up':
+      moveUp(board)
+      break;
+    case 's':
+    case 'down':
+      moveDown(board)
+      break;
+    case 'a':
+    case 'left':
+      moveLeft(board)
+      break;
+    case 'd':
+    case 'right':
+      moveRight(board)
+      break;
+    default:
+      console.log("Invalid Move")
+      return board
+  }
+  if (!boardsAreEqual(oldBoard,board)){
+    addValue(board)
+    if (!hasValidMoves(board)){
+      gameOver = true
+      console.log('Game Over')
+    }
+  }
+  else{
+    console.log('Invalid Move')
+  }
+  return board
+}
