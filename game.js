@@ -25,18 +25,13 @@ function getZeros(board,val){ // return pos as [i][j] of matching value on board
     return zerosPos
     }  
 function addValue(board){
-    console.log(board)
     let zeros = getZeros(board,0)
-    console.log(zeros)
     if (zeros.length == 0){
       return
     }
     var randomTile = Math.floor(Math.random() * zeros.length)
     var randomTilePos = zeros[randomTile]
-    console.log(randomTilePos)
     var randomNumber = Math.random() < 0.9 ? 2 : 4
-    console.log(randomTilePos[0][1])
-    console.log(board[randomTilePos[0][1]])
     board[randomTilePos[0][1]].splice(randomTilePos[0][0],1,randomNumber)
   return board
 }
@@ -48,8 +43,6 @@ function startGame (){
            ]
   addValue(board)
   addValue(board)
-  console.log(board)
-  
 }
 function removeZeros(row){
     let zeroRemovedRow = row.filter((value) => value > 0)
@@ -60,14 +53,12 @@ let result = []
 for (let i = 0; i < row.length; i++){
   if (row[i] === row[i+1]){
     result.push(row[i] * 2)
-    console.log(row[i])
+    score += row[i] * 2
     i++
     }
   else{
     result.push(row[i])
     }
-  console.log(result)
-  
   }
   return result
 }
@@ -251,5 +242,6 @@ document.addEventListener('keyup', function(event){
     default:
       console.log('Invalid KeyPress, Use  Arrow Up/Left/Down/Right or Key W/A/S/D')
   }
+  document.querySelector('#score').textContent = score
   renderBoard(board)
 })
