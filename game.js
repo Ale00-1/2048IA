@@ -117,15 +117,25 @@ function columnToRow(board){
   return newBoard
 }
 function moveUp(board){
-  board = columnToRow(board)
-  moveLeft(board)
-  board = columnToRow(board)
+  let columnsAsRows = columnToRow(board)
+  moveLeft(columnsAsRows)
+  let result = columnToRow(columnsAsRows)
+  for (let i = 0;i < 4; i++){
+    for (let j = 0;j < 4; j++){
+      board[i][j] = result[i][j]
+    }
+  }
   return board
 }
 function moveDown(board){
-  board = columnToRow(board)
-  moveRight(board)
-  board = columnToRow(board)
+  let columnsAsRows = columnToRow(board)
+  moveRight(columnsAsRows)
+  let result = columnToRow(columnsAsRows)
+  for (let i = 0;i < 4; i++){
+    for (let j = 0;j < 4; j++){
+      board[i][j] = result[i][j]
+    }
+  }
   return board
 }
 function cloneBoard(board){
