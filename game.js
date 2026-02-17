@@ -1,5 +1,4 @@
-var score = 0
-var gameOver = false
+
 
 function showBoard(board){
     var toShowBoard = []
@@ -35,15 +34,7 @@ function addValue(board){
     board[randomTilePos[0][1]].splice(randomTilePos[0][0],1,randomNumber)
   return board
 }
-function startGame (){
-  var board = [[0,0,0,0],
-            [0,0,0,0],
-            [0,0,0,0],
-            [0,0,0,0]
-           ]
-  addValue(board)
-  addValue(board)
-}
+
 function removeZeros(row){
     let zeroRemovedRow = row.filter((value) => value > 0)
     return zeroRemovedRow
@@ -214,10 +205,18 @@ function renderBoard (board){
     }
   }
 }
-let board = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
-addValue(board)
-renderBoard(board);
-document.addEventListener('keyup', function(event){
+function startGame (){
+  let score = 0
+  let gameOver = false
+  var board = [[0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0]
+           ]
+  addValue(board)
+  addValue(board)
+  renderBoard(board)
+  document.addEventListener('keyup', function(event){
   switch(event.key){
     case 'ArrowLeft':
     case 'a':
@@ -245,3 +244,4 @@ document.addEventListener('keyup', function(event){
   document.querySelector('#score').textContent = score
   renderBoard(board)
 })
+}
