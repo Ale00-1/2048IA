@@ -1,4 +1,5 @@
-
+let score = 0
+let gameOver = false
 
 function showBoard(board){
     var toShowBoard = []
@@ -195,6 +196,7 @@ function makeMove (board, move){
 }
 function renderBoard (board){
   let htmlBoard = document.querySelector('#board')
+  document.querySelector('#score').textContent = score
   htmlBoard.innerHTML = ""
   for (let i = 0; i < board.length; i++){
     for (let j = 0; j < 4; j++){
@@ -205,6 +207,8 @@ function renderBoard (board){
     }
   }
 }
+
+
 function startGame (){
   let score = 0
   let gameOver = false
@@ -241,7 +245,7 @@ function startGame (){
     default:
       console.log('Invalid KeyPress, Use  Arrow Up/Left/Down/Right or Key W/A/S/D')
   }
-  document.querySelector('#score').textContent = score
   renderBoard(board)
 })
 }
+startGame()
