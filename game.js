@@ -98,11 +98,12 @@ function moveRight(board){
   for (let i = 0;i < board.length; i++){
     board[i].reverse()
   }
-  moveLeft(board[i])
+  moveLeft(board)
   
   for (let i = 0;i < board.length; i++){
     board[i].reverse()
   }
+  return board
 }
 function columnToRow(board){
   let newBoard = []
